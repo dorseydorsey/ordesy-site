@@ -1,0 +1,397 @@
+/* Base styles */
+:root {
+    --pico-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
+    --pico-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
+    --pico-font-family: var(--pico-font-family-sans-serif);  
+    --text-color: #333;
+    --bg-color: #fff;
+    --link-color: #666;
+    --link-hover-color: #000;
+    --max-width: 1200px;
+    --spacing: clamp(1rem, 3vw, 2rem);
+    --pico-line-height: 1.5;
+    --pico-font-weight: 400;
+    --pico-font-size: 100%;
+}
+
+/*
+
+
+Forest Shadow (#1A1B19) - A near-black with the subtlest green undertone
+Ancient Pine (#1F4E3A) - A deep, mysterious forest green
+Mystic Jade (#3B8C6E) - A rich medium green with a misty quality
+Moss Mist (#DEDFD9) - A very light grey with just a hint of sage
+Lichen Grey (#808577) - A medium grey with organic green undertones
+
+
+*/
+
+/* -----------------FONT-----------------*/
+.crimson-text-regular {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .crimson-text-semibold {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .crimson-text-bold {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .crimson-text-regular-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .crimson-text-semibold-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .crimson-text-bold-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+/* -----------------FONT-----------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    padding: var(--spacing);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    margin-bottom: calc(var(--spacing) * 2);
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--pico-typography-spacing-vertical);
+  color: var(--pico-color);
+  font-weight: var(--pico-font-weight);
+  font-size: var(--pico-font-size);
+  line-height: var(--pico-line-height);
+  font-family: var(--pico-font-family);
+}
+
+h1 {
+    color: var(--font-color);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: calc(var(--spacing) * 00.1em);
+    letter-spacing: 0.02em;
+}
+
+h1 a{
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+h2 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 10;
+    color: var(--link-color);
+    margin-bottom: calc(var(--spacing) );
+    letter-spacing: 0.02em;
+
+}
+
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: center;
+    gap: calc(var(--spacing) * 1.5);
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Bio section styles */
+.bio-container {
+    display: grid;
+    grid-template-columns: 2fr;
+    gap: calc(var(--spacing) * 2);
+    margin-bottom: calc(var(--spacing) * 3);
+    max-width:76%;
+    margin-left: 12%;
+}
+
+@media (min-width: 768px) {
+    .bio-container {
+        grid-template-columns: 3fr 3fr;
+    }
+}
+
+.bio-text {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    text-align: center;
+}
+
+.bio-text p {
+    margin-bottom: calc(var(--spacing) * 0.3);
+}
+
+.bio-text strong {
+    font-weight: 500;
+}
+
+.bio-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Social links */
+.social {
+    text-align: Center;
+    margin-top: calc(var(--spacing) * 2);
+}
+
+.social-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.social-link:hover {
+    color: var(--link-hover-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: calc(var(--spacing) * 0.8);
+    }
+
+    .bio-text {
+        order: 2;
+    }
+
+    .bio-image {
+        order: 1;
+    }
+}
+
+/* Active nav link state */
+nav a.active {
+    color: var(--text-color);
+}
+
+.visual-grid-spotify {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing);
+    padding: 0 var(--spacing);
+    margin-top: calc(var(--spacing) * 2);
+    margin-left:15%;
+    margin-right:15%;
+}
+
+.visual-itemL {
+
+
+}
+
+.visual-itemR {
+
+
+}
+
+
+
+
+
+
+/* Visual grid layout */
+/*
+.visual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:1px;
+}
+
+.visual-item-video {
+    aspect-ratio: 1;
+    overflow: hidden;
+    align-content: right;
+    grid-template-columns: fit-content(300px) fit-content(300px) 1fr;
+}
+
+*/
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 1 auto;
+}
+
+.visual-item-video {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr; /* Two rows: one for video, one for text */
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto; /* Center align */
+}
+
+.visual-item-video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Ensures a responsive video */
+}
+
+.visual-item-video p {
+    font-size: 16px;
+
+}
+
+/* This creates a responsive container for the iframe */
+/*
+.visual-item-video::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; 
+  }
+  
+  .visual-item-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .visual-item-video p {
+    margin-top: 1rem;
+    text-align: bottom;
+    padding: 0.5rem;
+    height: fit-content;
+  }
+*/
+
+
+
+.visual-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    max-width: 35%;
+    align-content: right;
+}
+
+.visual-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for visual grid */
+@media (max-width: 640px) {
+    .visual-grid {
+        grid-template-columns: 1fr;
+        padding: 10;
+    }
+    
+    .visual-item {
+        aspect-ratio: auto;
+    }
+}
+
+/* Ensure images don't break layout on load */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add more space below header on visual page */
+.visual-grid {
+    margin-top: calc(var(--spacing) * 3);
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.igpost {
+    display: block;
+    margin: 0 auto;
+}
+
+blockquote {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.installation-container{
+    margin:auto;
+    justify-items: center;
+    max-width: 70%;
+}
+
+.igpost{
+    margin-top: calc(var(--spacing) * 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.decor{
+    color: var(--link-color);
+}
