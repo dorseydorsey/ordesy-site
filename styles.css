@@ -233,21 +233,6 @@ nav a.active {
     margin-right:15%;
 }
 
-.visual-itemL {
-
-
-}
-
-.visual-itemR {
-
-
-}
-
-
-
-
-
-
 /* Visual grid layout */
 /*
 .visual-grid {
@@ -379,9 +364,10 @@ blockquote {
 
 
 .installation-container{
-    margin:auto;
-    justify-items: center;
-    max-width: 70%;
+    margin: 0 auto;
+
+    width: 100%;
+    position: relative;
 }
 
 .igpost{
